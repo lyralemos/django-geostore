@@ -1,8 +1,37 @@
 CHANGELOG
 =========
 
-0.6.9+dev      (XXXX-XX-XX)
+0.7.3          (2023-04-17)
 ---------------------------
+
+* Support django 4.2
+* Allow layer access with group limit to superusers
+* Drop django 2.2 and python 3.6 support
+
+
+0.7.2          (2023-03-06)
+---------------------------
+
+* Allow dates and objects in feature properties by using DjangoJSONEncoder
+
+
+0.7.1          (2023-03-03)
+---------------------------
+
+* Set default zoom levels to 0-23
+* Limit Fiona version < 1.9 until fix
+
+
+0.7.0          (2022-12-09)
+---------------------------
+
+* Don't limit psycopg2 version in setup.py
+* Add migration check in CI
+
+0.6.9          (2022-11-22)
+---------------------------
+
+* Support python 3.10 and django 4.1
 
 
 0.6.8          (2022-07-04)

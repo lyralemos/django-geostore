@@ -8,6 +8,7 @@ from rest_framework import serializers
 from rest_framework.fields import empty
 from rest_framework.reverse import reverse
 from rest_framework_gis.serializers import GeometryField
+from urllib.parse import unquote
 
 from geostore import settings as app_settings
 from geostore.models import (Feature, FeatureExtraGeom, FeatureRelation, Layer,
@@ -89,10 +90,10 @@ class GroupSerializer(serializers.ModelSerializer):
     group_tiles = serializers.SerializerMethodField()
 
     def get_tilejson(self, obj):
-        return urlunquote(reverse('group-tilejson', args=[obj.slug]))
+        return unquote(reverse('group-tilejson', args=[obj.slug]))
 
     def get_group_tiles(self, obj):
-        return urlunquote(reverse('group-tiles-pattern', args=[obj.slug]))
+        return unquote(reverse('group-tiles-pattern', args=[obj.slug]))
 
     class Meta:
         model = LayerGroup
@@ -149,7 +150,7 @@ class LayerSerializer(serializers.ModelSerializer):
         return reverse('layer-intersects', args=[obj.name, ])
 
     def get_tilejson(self, obj):
-        return urlunquote(reverse('layer-tilejson', args=[obj.pk]))
+        return unquote(reverse('layer-tilejson', args=[obj.pk]))
 
     class Meta:
         model = Layer
