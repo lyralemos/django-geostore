@@ -1,6 +1,22 @@
 CHANGELOG
 =========
 
+1.0.0          (2024-01-12)
+---------------------------
+
+* Add support for django 5.0
+* Add support for python 3.12
+* Improve TileJSON and Tile cache keys
+
+
+0.8.0          (2023-09-08)
+---------------------------
+
+* Works with fiona >= 1.9
+* Add support for django 5.0
+* Add support for python 3.12
+
+
 0.7.3          (2023-04-17)
 ---------------------------
 
